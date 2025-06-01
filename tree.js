@@ -126,16 +126,13 @@ export class BinaryTree {
 			if (this._top) {
 				let current = this._top;
 				if (!current.excluded) output.push(this._top.obj)
-					console.log(current)
 				while (current.left !== null) {
 					current = current.left
-					console.log(current)
 					if (!current.excluded) output = [current.obj, ...output]
 				}
 				current = this._top;
 				while (current.right !== null) {
 					current = current.right
-					console.log(current)
 					if (!current.excluded) output.push(current.obj)
 				}
 			}

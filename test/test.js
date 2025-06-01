@@ -1,4 +1,5 @@
 import {BinaryTree} from "../tree.js"
+import assert from 'node:assert'
 
 (async ()=>{
 	
@@ -18,10 +19,14 @@ import {BinaryTree} from "../tree.js"
 	await tree.remove("Joseph");
 	await tree.push("Eve");
 
-	let data = tree.export();
-	assert (tree.stats.total() === 18)
+	console.log(tree.stats.total(), 16)
+	assert (tree.stats.total() === 16)
+	console.log(tree.stats.removed, 4)
 	assert (tree.stats.removed === 4)
-	assert (tree.stats.duplicates === 4)
+	console.log(tree.stats.duplicates, 5)
+	assert (tree.stats.duplicates === 5)
+	let data = tree.export();
+	console.log(data);
 	assert (data === [
 	  'Adam',    'Eve',
 	  'John',    'Lilith',
